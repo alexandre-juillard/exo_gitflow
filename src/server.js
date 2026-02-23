@@ -32,6 +32,9 @@ app.get('/clients', async (req, res) => {
     res.status(200).json(clients);
 });
 
-app.listen(3000, () => console.log('Serveur sur http://localhost:3000'));
+// Ne démarrer le serveur que si ce fichier est exécuté directement
+if (require.main === module) {
+    app.listen(3000, () => console.log('Serveur sur http://localhost:3000'));
+}
 
 module.exports = app;
