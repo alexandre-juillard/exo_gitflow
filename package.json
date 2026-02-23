@@ -1,0 +1,26 @@
+{
+  "name": "exo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "math.js",
+  "scripts": {
+    "test": "jest --verbose --runInBand --detectOpenHandles",
+    "test:watch": "jest --watchAll",
+    "start": "node src/math.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongodb": "^7.1.0",
+    "mongoose": "^9.2.0"
+  },
+  "devDependencies": {
+    "chai": "^6.2.2",
+    "jest": "^30.2.0",
+    "mocha": "^11.7.5",
+    "supertest": "^7.2.2"
+  }
+}
