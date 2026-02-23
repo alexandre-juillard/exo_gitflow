@@ -5,9 +5,6 @@ const clientService = require('./services/clientService');
 const app = express();
 app.use(express.json());
 
-// Connexion à MongoDB
-connectDB();
-
 app.get('/api/status', (req, res) => {
     res.status(200).json({ status: 'ok' });
 });
@@ -34,7 +31,9 @@ app.get('/clients', async (req, res) => {
 
 // Ne démarrer le serveur que si ce fichier est exécuté directement
 if (require.main === module) {
-    app.listen(3000, () => console.log('Serveur sur http://localhost:3000'));
+    connectDB().then(() => {
+        app.listen(3000, () => console.log('Serveur sur http://localhost:3000'));
+    });
 }
 
 module.exports = app;
